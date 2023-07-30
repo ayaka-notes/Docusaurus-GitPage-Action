@@ -5,6 +5,7 @@ author: 'Musicminion@ayaka-notes'
 
 runs:
   using: 'ubuntu-latest'
+  shell: 'bash'
   steps:
       - name: Checkout
         uses: actions/checkout@v3
