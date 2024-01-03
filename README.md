@@ -5,7 +5,7 @@ Docusaurus with Git-Action，auto publish to GitPage.
 - Detect the name of the repo, and substitute the base url
 - Currently it works with Docusaurus v3.0
 
-### 直接使用
+## Useage
 
 ```yml
 name: DeployPage
