@@ -83,4 +83,4 @@ jobs:
         uses: actions/deploy-pages@v2
 branding:
   icon: book-open
-  color: blue
+  color: green
