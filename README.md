@@ -67,26 +67,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'  # 指定所需的 Node.js 版本
-      # 替换掉docusaurus.config.js中的baseurl
-      - name: config
-        run: |
-          sed -i "s/baseUrl: '\/'/baseUrl: '\/${{ github.event.repository.name }}\/'/g" docusaurus.config.js 
-      - name: Build Page
-        run: |
-          npm install
-          npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          # Upload entire repository
-          path: './build'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: DeployPage
+        uses: ayaka-notes/Docusaurus-GitPage-Action@v1.1
 ```
