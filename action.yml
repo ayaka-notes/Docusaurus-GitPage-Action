@@ -65,7 +65,9 @@ runs:
       uses: actions/setup-node@v2
       with:
         node-version: '18'
-    
+    - shell: bash
+      run: |
+        sed -i "s/baseUrl: '\/'/baseUrl: '\/${{ github.event.repository.name }}\/'/g" docusaurus.config.js 
     
     # - name: Checkout
     #     uses: actions/checkout@v3
