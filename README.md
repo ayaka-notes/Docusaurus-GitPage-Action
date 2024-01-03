@@ -1,27 +1,16 @@
 # Docusaurus-GitAction
-Docusaurus的Git-Action工具，自动化发布到GitPage中。
+Docusaurus with Git-Action，auto publish to GitPage.
 
-### 特性
-- 自动检测仓库的名称，部署到`username.github.io/<repo-name>`，不需要手动替换配置文件
+## Feature
+- Detect the name of the repo, and substitute the base url
+- Currently it works with Docusaurus v3.0
 
 ### 直接使用
 
 ```yml
-# Simple workflow for deploying static content to GitHub Pages
 name: DeployPage
 
 on:
-  ####################################################################
-  # If you want to setup a cron schedule, uncomment the following line
-  # and set the cron schedule as desired (https://crontab.guru/).
-  # 
-  # 如果你想要设置一个定时任务，取消下面一行的注释，并设置你想要的定时任务
-  # 注意：定时任务的时间是 UTC 时间，北京时间需要减去 8 小时
-
-  # schedule:
-  #   - cron: '30 4 * * *'
-
-
   ####################################################################
   # Allows you to run this workflow manually from the Actions tab
   # 
@@ -33,14 +22,6 @@ on:
         type: boolean
         required: true
         default: true
-  
-  ####################################################################
-  # Allows you to run this workflow manually from the Actions tab
-  # Runs on pushes targeting the default branch
-  # If you think you have enough compute times, or if you deploy just ocassionally
-  # you can uncomment the following line
-  # 每次推送都自动部署到 GitHub Pages，富哥请务必打开下面的选项。
-  # 如果你经常部署你的网站，或者你有足够的计算时间，你可以取消下面一行的注释
   push:
     branches: ["main"]
 
