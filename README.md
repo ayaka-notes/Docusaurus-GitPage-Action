@@ -49,5 +49,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: DeployPage
-        uses: ayaka-notes/Docusaurus-GitPage-Action@v1.1
+        uses: ayaka-notes/Docusaurus-GitPage-Action@v1.2
 ```
