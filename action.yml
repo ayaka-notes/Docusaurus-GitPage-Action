@@ -1,8 +1,9 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: DeployPage
 description: GitHub Action to Publish Docusaurus Page.
+author: Musicminion/ayaka-notes
 
-on:
+# on:
   ####################################################################
   # If you want to setup a cron schedule, uncomment the following line
   # and set the cron schedule as desired (https://crontab.guru/).
@@ -18,13 +19,13 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   # 
   # 允许你在 Actions 页面手动运行这个工作流
-  workflow_dispatch:
-    inputs:
-      unconditional-invoking:
-        description: 'Deploy Manually'
-        type: boolean
-        required: true
-        default: true
+  # workflow_dispatch:
+  #   inputs:
+  #     unconditional-invoking:
+  #       description: 'Deploy Manually'
+  #       type: boolean
+  #       required: true
+  #       default: true
   
   ####################################################################
   # Allows you to run this workflow manually from the Actions tab
@@ -33,8 +34,8 @@ on:
   # you can uncomment the following line
   # 每次推送都自动部署到 GitHub Pages，富哥请务必打开下面的选项。
   # 如果你经常部署你的网站，或者你有足够的计算时间，你可以取消下面一行的注释
-  push:
-    branches: ["main"]
+  # push:
+  #   branches: ["main"]
 
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -49,13 +50,13 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-jobs:
+# jobs:
   # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
